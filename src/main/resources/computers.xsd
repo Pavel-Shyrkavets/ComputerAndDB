@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="computers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="computer">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="manufacturer" type="xs:string" />
+                            <xs:element name="model" type="xs:string" />
+                            <xs:element name="computer_type" type="xs:string" />
+                            <xs:element name="target" type="xs:string" />
+                            <xs:element name="freshness" type="xs:string" />
+                            <xs:element name="oss">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="os">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="os_name" type="xs:string" />
+                                                    <xs:element name="os_description" type="xs:string" />
+                                                    <xs:element name="computer_id" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="cpus">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="cpu1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="manufacturer" type="xs:string" />
+                                                    <xs:element name="model" type="xs:string" />
+                                                    <xs:element name="number_of_cores" type="xs:unsignedByte" />
+                                                    <xs:element name="clock_rate_in_GHz" type="xs:decimal" />
+                                                    <xs:element name="has_turbo_boost" type="xs:boolean" />
+                                                    <xs:element name="computer_id" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="gpus">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="gpu">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="manufacturer" type="xs:string" />
+                                                    <xs:element name="model" type="xs:string" />
+                                                    <xs:element name="memory_size_in_GBs" type="xs:unsignedByte" />
+                                                    <xs:element name="clock_rate_in_MHz" type="xs:unsignedShort" />
+                                                    <xs:element name="is_integrated" type="xs:boolean" />
+                                                    <xs:element name="computer_id" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="mice">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="mouse">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="manufacturer" type="xs:string" />
+                                                    <xs:element name="model" type="xs:string" />
+                                                    <xs:element name="mouse_type" type="xs:string" />
+                                                    <xs:element name="computer_id" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
