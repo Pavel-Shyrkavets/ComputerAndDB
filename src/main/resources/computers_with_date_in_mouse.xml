@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<computers>
+    <computer id="1">
+        <manufacturer>Dell</manufacturer>
+        <model>Latitude 7200</model>
+        <computer_type>Laptop</computer_type>
+        <target>Business</target>
+        <freshness>Not new</freshness>
+        <oss>
+            <os id="1">
+                <os_name>Windows</os_name>
+                <os_description>10 Pro</os_description>
+                <computer_id>1</computer_id>
+            </os>
+        </oss>
+        <cpus>
+            <cpu1 id="1">
+                <manufacturer>Intel</manufacturer>
+                <model>CORE i5 vPro 8th Gen</model>
+                <number_of_cores>8</number_of_cores>
+                <clock_rate_in_GHz>1.6</clock_rate_in_GHz>
+                <has_turbo_boost>true</has_turbo_boost>
+                <computer_id>1</computer_id>
+            </cpu1>
+        </cpus>
+        <gpus>
+            <gpu id="1">
+                <manufacturer>Intel</manufacturer>
+                <model>UHD Graphics 620</model>
+                <memory_size_in_GBs>0</memory_size_in_GBs>
+                <clock_rate_in_MHz>1150</clock_rate_in_MHz>
+                <is_integrated>true</is_integrated>
+                <computer_id>1</computer_id>
+            </gpu>
+        </gpus>
+        <mice>
+            <mouse id="1">
+                <manufacturer>Logitech</manufacturer>
+                <model>X</model>
+                <mouse_type>Bluetooth</mouse_type>
+                <manufacture_date>2025-01-31</manufacture_date>
+                <computer_id>1</computer_id>
+            </mouse>
+        </mice>
+    </computer>
+</computers>
