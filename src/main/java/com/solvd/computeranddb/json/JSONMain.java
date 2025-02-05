@@ -17,6 +17,7 @@
  */
 package com.solvd.computeranddb.json;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solvd.computeranddb.json.models.CPU;
 import com.solvd.computeranddb.json.models.Computer;
@@ -51,6 +52,7 @@ public class JSONMain {
         Computer computer = new Computer(1, "Sony", "Vaio", "Laptop", "Business", "Not new",
                             new BigDecimal("400.00"), false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, cpus, mice);
         Computer computerFromJson;
+        List<Computer> computerList;
 
         try {
             //Write to a JSON file
@@ -60,6 +62,9 @@ public class JSONMain {
             computerFromJson = objectMapper.readValue(
                     new File("src/main/resources/parsed_computer.json"), Computer.class);
             LOGGER.info(computerFromJson);
+            computerList = objectMapper.readValue(new File("src/main/resources/computer_list.json"),
+                                                  new TypeReference<List<Computer>>(){});
+            LOGGER.info(computerList);
         } catch (IOException e) {
             LOGGER.error("IOException is caught.");
         }
