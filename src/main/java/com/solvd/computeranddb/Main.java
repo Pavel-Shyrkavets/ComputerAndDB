@@ -36,7 +36,7 @@ import java.math.BigDecimal;
  * The Main class starts an application that selects, inserts into, updates and
  * deletes data from the computer, cpu1, mouse tables in the computer database.
  *
- * @version    1.4 05 Feb 2025
+ * @version    1.5 12 Feb 2025
  * @author     Pavel Shyrkavets
  */
 
