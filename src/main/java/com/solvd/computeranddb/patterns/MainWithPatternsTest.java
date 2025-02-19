@@ -87,5 +87,9 @@ public class MainWithPatternsTest {
                 .withMouse(mouse)
                 .build();
         computer.use();
+
+        ComputerDecorator laptop = new ComputerDecorator(computer);
+        laptop.use();
+        laptop.switchOff();
     }
 }
