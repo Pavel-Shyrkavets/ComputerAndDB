@@ -21,10 +21,14 @@ import com.solvd.computeranddb.patterns.models.CPU;
 import com.solvd.computeranddb.patterns.models.Computer;
 import com.solvd.computeranddb.patterns.models.Mouse;
 import com.solvd.computeranddb.patterns.utils.FactoryGenerator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.math.BigDecimal;
 
 public class MainWithPatternsTest {
+    private final static Logger LOGGER = LogManager.getLogger(MainWithPatternsTest.class);
+
     public static void main(String[] args) {
         AbstractFactory componentFactory = FactoryGenerator.getFactory("component");
         CPUBuilder cpuBuilder = new CPUBuilder();
@@ -33,6 +37,8 @@ public class MainWithPatternsTest {
         CPU cpu;
         Mouse mouse;
         Computer computer;
+        Context context;
+        String comparisonResult;
 
         if (componentFactory != null) {
             cpu = (CPU) componentFactory.getComponent("CPU");
@@ -89,7 +95,14 @@ public class MainWithPatternsTest {
         computer.use();
 
         ComputerDecorator laptop = new ComputerDecorator(computer);
-        laptop.use();
         laptop.switchOff();
+        laptop.use();
+
+        context = new Context(new CompComparisonByCPUClockRate());
+        comparisonResult = context.executeStrategy(computer, computer);
+        LOGGER.info(comparisonResult);
+        context = new Context(new CompComparisonByNumOfCores());
+        comparisonResult = context.executeStrategy(computer, computer);
+        LOGGER.info(comparisonResult);
     }
 }
